@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: xauusd-m5-ipad-bot
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: MARKET_DATA_PROVIDER
+        value: demo
+      - key: MARKET_DATA_API_KEY
+        sync: false
+      - key: MARKET_DATA_SYMBOL
+        value: XAU/USD
